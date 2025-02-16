@@ -1,0 +1,25 @@
+#virtualenv
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Data
+data/faiss/*
+!data/faiss/.gitkeep
+data/routes/*
+!data/routes/.gitkeep
+
+models/
+!models/.gitkeep
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+
+
+

@@ -1,0 +1,6 @@
+geopandas
+matplotlib
+Pillow
+faiss-cpu
+transformers
+torch
