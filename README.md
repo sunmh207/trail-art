@@ -14,21 +14,29 @@ Enter the prompt words, and the system will generate a related route on the map.
 
 ## Setup
 
-1.  Clone source code
+### 1.Clone source code
 ```
-git clone https://github.com/trailart/trailart.git
-cd trailart
+git clone https://github.com/sunmh207/trail-art.git
+cd trail-art
 ```
 
-2.  Install dependent packages
+### 2.  Install dependent packages
 ```
 pip install -r requirements.txt
 ```
 
-3.  Run
+### 3.  Run
 ```
 python app.py
 ```
+Select the action number to be performed
 
+1.Traverse all paths on the map and save them as images.
+
+2.Generate a route based on the prompt words.
+
+3.Generate a walking trajectory based on the generated route.
+
+You need to execute in order.
 ## Notes
 This is just an experimental project. It only provides an idea and basic code. It has not yet achieved the expected results. Everyone is welcome to provide comments and suggestions.
