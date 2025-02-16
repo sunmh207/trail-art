@@ -29,7 +29,6 @@ def map2images(shape_file: str, output_image_dir: str, max_length: int = 25000, 
         if not all_paths:
             print("No paths found.")
             continue
-        print(f"Found {len(all_paths)} paths.")
 
         output_dir = os.path.join(output_image_dir, str(start_index))
         if not os.path.exists(output_dir):
@@ -39,7 +38,7 @@ def map2images(shape_file: str, output_image_dir: str, max_length: int = 25000, 
             output_image_file = os.path.join(output_dir, f"connected_path_{idx + 1}.png")
             GeoUtil.save_path_to_image(gdf, path, output_image_file)
 
-        print(f"Generated {len(all_paths)} images, saved to '{output_dir}' directory.")
+        print(f"{round_num}/{max_rounds}: Generated {len(all_paths)} images, saved to '{output_dir}' directory.")
 
 
 def images2vector(image_folder: str, chinese_clip_encoder: ChineseClipEncoder, vector_index_path: str,
@@ -55,8 +54,7 @@ if __name__ == "__main__":
     vector_index_path = "data/faiss/image_vectors.index"
     vector_meta_path = "data/faiss/image_paths.pkl"
 
-    clip_model_name = "models/chinese-clip-vit-base-patch16"
-    chinese_clip_encoder = ChineseClipEncoder(model_name=clip_model_name)
+    chinese_clip_encoder = ChineseClipEncoder()
 
     print("Please choose an option:")
     print("1: Traverse all paths on the map and save them as images.")
@@ -67,8 +65,8 @@ if __name__ == "__main__":
     if choice == "1":
         max_length: int = 25000
         min_length: int = 2000
-        max_groups_per_start=50 # How many routes can be drawn at each starting point. In actual applications, it should be set larger, e.g. 100000
-        max_rounds=100  # How many starting points can be traversed. In actual applications, it should be set larger, e.g. 100000
+        max_groups_per_start=20 # How many routes can be drawn at each starting point. In actual applications, it should be set larger, e.g. 100000
+        max_rounds=30  # How many starting points can be traversed. In actual applications, it should be set larger, e.g. 100000
         map2images(shape_file=shapefile, output_image_dir=output_image_dir, max_length=max_length, min_length=min_length,
                    max_groups_per_start=max_groups_per_start, max_rounds=max_rounds)
     elif choice == "2":
