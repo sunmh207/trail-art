@@ -25,6 +25,10 @@ cd trail-art
 pip install -r requirements.txt
 ```
 
+### 3.  Download chinese-clip-vit-base-patch16
+
+Download https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16 and put it in the `models` folder.
+
 ### 3.  Run
 ```
 python app.py
