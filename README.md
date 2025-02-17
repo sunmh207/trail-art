@@ -1,4 +1,6 @@
 # TrailArt
+[中文](README_zh.md)
+
 
 ## Introduction
 TrailArt: Generate a route on the map based on the prompt words
@@ -25,22 +27,18 @@ cd trail-art
 pip install -r requirements.txt
 ```
 
-### 3.  Download chinese-clip-vit-base-patch16
-
-Download https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16 and put it in the `models` folder.
-
-### 4.  Run
+### 3.  Run
 ```
 python app.py
 ```
 Select the action number to be performed
 
-1.Traverse all paths on the map and save them as images.
+1.Traverse all the paths on the map, generate images and save them in the data/routes directory.
 
-2.Generate a route based on the prompt words.
+2.Read the images in data/routes, convert them into vectors, and store them in the local vector database (location: data/faiss).
 
-3.Generate a walking trajectory based on the generated route.
+3.Find the most suitable route image based on the prompt word.
 
 You need to execute in order.
 ## Notes
-This is just an experimental project. It only provides an idea and basic code. It has not yet achieved the expected results. Everyone is welcome to provide comments and suggestions.
+**This is just an experimental project. It only provides an idea and basic code. It has not yet achieved the expected results. Everyone is welcome to provide comments and suggestions.**
