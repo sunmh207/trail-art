@@ -1,6 +1,8 @@
 # TrailArt
 [中文](README_zh.md)
 
+![TrailArt logo](docs/images/trail_art.png)
+
 
 ## Introduction
 TrailArt: Generate a route on the map based on the prompt words

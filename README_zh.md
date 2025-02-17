@@ -1,6 +1,8 @@
 # TrailArt
 [English](README.md)
 
+![TrailArt logo](docs/images/trail_art.png)
+
 ## 介绍
 TrailArt：根据提示词在地图上生成路线
 
